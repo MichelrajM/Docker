@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # Author: Michelraj
 # Date: 10 Sep 2024
@@ -24,24 +23,25 @@ html_content='<!DOCTYPE html>
 </body>
 </html>'
 
-#write the content index.html file 
-echo "html_content" >index.html
+# Write the content to index.html file
+echo "$html_content" > index.html
 
-#ptint the message file created sucessfully
-echo "the file is created is sucessfully"
+# Print the message that the file was created successfully
+echo "The file index.html was created successfully."
 
 # Print the present working directory
 echo "The current working directory is:"
 pwd
 
-#show the docker images
+# Show the Docker images
 docker images
 
-#docker container run 
-docker run -d --name myapps -p "8000:80" -v "/root/myapp:/ /usr/local/apache2/htdocs" httpd
+# Run a Docker container
+docker run -d --name myapp-- -p "8800:80" -v "$(pwd):/usr/local/apache2/htdocs" httpd
 
-#print the the container is run sucessfully
-echo "the container is run sucessfully:"
+# Print the message that the container is running successfully
+echo "The container is running successfully:"
+
+# Show the running Docker containers
 docker ps
 
- 
